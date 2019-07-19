@@ -15,13 +15,13 @@ function searchIt(newelem) {
     }
 //   let img2 = img.style.width = "100px"
   var element = document.getElementById("this_is_it");
-  
-  element.innerHTML = `
-          
-           <td scope="col"><img src="${allObj.img}"></td>
+  let row = document.createElement('tr')
+  row.innerHTML = `
+            <tr>
+           <td scope="col"><img src="${allObj.img}" width="600px"></td>
            <td scope="col">${allObj.name}</td>
            <td scope="col">${allObj.price}</td>
-          
+            </tr>
   `
  
  
