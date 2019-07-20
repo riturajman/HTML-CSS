@@ -18,17 +18,21 @@ function getdata(x){
         if(this.status == 200){
             const data = JSON.parse(this.responseText)
             const selectdata = `
-            <ul>
-            <li>Username: ${data.login}</li>
-            <li>Avtar: <img style="width: 80px" src="${data.avatar_url}"></li>
-            <li>Bio: ${data.bio}</li>
-            <li>Company: ${data.company}</li>
-            <li>Followers ${data.followers}</li>
-            <li>Following ${data.following}</li>
-            <li>Public repos: ${data.public_repos}</li>
-            <li>Public gists: ${data.public_gists}</li>
-            </ul>
-            `
+                                <div class="card" style="width: 18rem;">
+                    <img src="${data.avatar_url}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Username: ${data.login}</h5>
+                        <p class="card-text">Bio: ${data.bio}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Company: ${data.company}</li>
+                        <li class="list-group-item">Followers: ${data.followers}</li>
+                        <li class="list-group-item">Following: ${data.following}</li>
+                        <li class="list-group-item">Public repos: ${data.public_repos}</li>
+                        <li class="list-group-item">Public gists: ${data.public_gists}</li>
+                    </ul>
+                    </div>            
+                    `
             document.getElementById("to_print").innerHTML = selectdata;
         }
     }
